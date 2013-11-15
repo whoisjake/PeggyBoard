@@ -7,15 +7,20 @@
 //
 
 #import "PEGAppDelegate.h"
+#import "PEGBoardViewController.h"
 
 @implementation PEGAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[UIApplication sharedApplication] setApplicationSupportsShakeToEdit:YES];
+    [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    PEGBoardViewController * boardViewController = [[PEGBoardViewController alloc] initWithNibName:nil bundle:nil];
+    self.window.rootViewController = boardViewController;
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 

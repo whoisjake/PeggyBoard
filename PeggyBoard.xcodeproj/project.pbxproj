@@ -1,1024 +1,528 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>005E29F7EF354C17A190747E</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>archive.ar</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>libPods.a</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>23CD67CD18356E2C00238761</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>23CD67DF18356E2C00238761</string>
-				<string>23CD67F818356E2C00238761</string>
-				<string>23CD67D818356E2C00238761</string>
-				<string>23CD67D718356E2C00238761</string>
-				<string>524123A3965A4196A71B3387</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>23CD67CE18356E2C00238761</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>CLASSPREFIX</key>
-				<string>PEG</string>
-				<key>LastUpgradeCheck</key>
-				<string>0500</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>Jacob Good</string>
-				<key>TargetAttributes</key>
-				<dict>
-					<key>23CD67F018356E2C00238761</key>
-					<dict>
-						<key>TestTargetID</key>
-						<string>23CD67D518356E2C00238761</string>
-					</dict>
-				</dict>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>23CD67D118356E2C00238761</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>23CD67CD18356E2C00238761</string>
-			<key>productRefGroup</key>
-			<string>23CD67D718356E2C00238761</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>23CD67D518356E2C00238761</string>
-				<string>23CD67F018356E2C00238761</string>
-			</array>
-		</dict>
-		<key>23CD67D118356E2C00238761</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>23CD680018356E2C00238761</string>
-				<string>23CD680118356E2C00238761</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>23CD67D218356E2C00238761</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>23CD67E618356E2C00238761</string>
-				<string>23CD67EA18356E2C00238761</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>23CD67D318356E2C00238761</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>23CD67DC18356E2C00238761</string>
-				<string>23CD67DE18356E2C00238761</string>
-				<string>23CD67DA18356E2C00238761</string>
-				<string>F73C91BFD85E4FF6ACDC7AA1</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>23CD67D418356E2C00238761</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>23CD67E418356E2C00238761</string>
-				<string>23CD67EC18356E2C00238761</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>23CD67D518356E2C00238761</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>23CD680218356E2C00238761</string>
-			<key>buildPhases</key>
-			<array>
-				<string>E20F92CDC2BF4A73BB5A6413</string>
-				<string>23CD67D218356E2C00238761</string>
-				<string>23CD67D318356E2C00238761</string>
-				<string>23CD67D418356E2C00238761</string>
-				<string>B22926A7F5254AD0BAE82A88</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>PeggyBoard</string>
-			<key>productName</key>
-			<string>PeggyBoard</string>
-			<key>productReference</key>
-			<string>23CD67D618356E2C00238761</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>23CD67D618356E2C00238761</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>PeggyBoard.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>23CD67D718356E2C00238761</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>23CD67D618356E2C00238761</string>
-				<string>23CD67F118356E2C00238761</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>23CD67D818356E2C00238761</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>23CD67D918356E2C00238761</string>
-				<string>23CD67DB18356E2C00238761</string>
-				<string>23CD67DD18356E2C00238761</string>
-				<string>23CD67F218356E2C00238761</string>
-				<string>005E29F7EF354C17A190747E</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>23CD67D918356E2C00238761</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>23CD67DA18356E2C00238761</key>
-		<dict>
-			<key>fileRef</key>
-			<string>23CD67D918356E2C00238761</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>23CD67DB18356E2C00238761</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>CoreGraphics.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/CoreGraphics.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>23CD67DC18356E2C00238761</key>
-		<dict>
-			<key>fileRef</key>
-			<string>23CD67DB18356E2C00238761</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>23CD67DD18356E2C00238761</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>UIKit.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/UIKit.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>23CD67DE18356E2C00238761</key>
-		<dict>
-			<key>fileRef</key>
-			<string>23CD67DD18356E2C00238761</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>23CD67DF18356E2C00238761</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>23CD67E818356E2C00238761</string>
-				<string>23CD67E918356E2C00238761</string>
-				<string>23CD67EB18356E2C00238761</string>
-				<string>23CD67E018356E2C00238761</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>PeggyBoard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>23CD67E018356E2C00238761</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>23CD67E118356E2C00238761</string>
-				<string>23CD67E218356E2C00238761</string>
-				<string>23CD67E518356E2C00238761</string>
-				<string>23CD67E718356E2C00238761</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>23CD67E118356E2C00238761</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>PeggyBoard-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>23CD67E218356E2C00238761</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>23CD67E318356E2C00238761</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>23CD67E318356E2C00238761</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>23CD67E418356E2C00238761</key>
-		<dict>
-			<key>fileRef</key>
-			<string>23CD67E218356E2C00238761</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>23CD67E518356E2C00238761</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>main.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>23CD67E618356E2C00238761</key>
-		<dict>
-			<key>fileRef</key>
-			<string>23CD67E518356E2C00238761</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>23CD67E718356E2C00238761</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PeggyBoard-Prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>23CD67E818356E2C00238761</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PEGAppDelegate.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>23CD67E918356E2C00238761</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PEGAppDelegate.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>23CD67EA18356E2C00238761</key>
-		<dict>
-			<key>fileRef</key>
-			<string>23CD67E918356E2C00238761</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>23CD67EB18356E2C00238761</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>folder.assetcatalog</string>
-			<key>path</key>
-			<string>Images.xcassets</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>23CD67EC18356E2C00238761</key>
-		<dict>
-			<key>fileRef</key>
-			<string>23CD67EB18356E2C00238761</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>23CD67ED18356E2C00238761</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>23CD67FF18356E2C00238761</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>23CD67EE18356E2C00238761</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>23CD67F318356E2C00238761</string>
-				<string>23CD67F518356E2C00238761</string>
-				<string>23CD67F418356E2C00238761</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>23CD67EF18356E2C00238761</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>23CD67FD18356E2C00238761</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>23CD67F018356E2C00238761</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>23CD680518356E2C00238761</string>
-			<key>buildPhases</key>
-			<array>
-				<string>23CD67ED18356E2C00238761</string>
-				<string>23CD67EE18356E2C00238761</string>
-				<string>23CD67EF18356E2C00238761</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>23CD67F718356E2C00238761</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>PeggyBoardTests</string>
-			<key>productName</key>
-			<string>PeggyBoardTests</string>
-			<key>productReference</key>
-			<string>23CD67F118356E2C00238761</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle.unit-test</string>
-		</dict>
-		<key>23CD67F118356E2C00238761</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>PeggyBoardTests.xctest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>23CD67F218356E2C00238761</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>XCTest.framework</string>
-			<key>path</key>
-			<string>Library/Frameworks/XCTest.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>23CD67F318356E2C00238761</key>
-		<dict>
-			<key>fileRef</key>
-			<string>23CD67F218356E2C00238761</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>23CD67F418356E2C00238761</key>
-		<dict>
-			<key>fileRef</key>
-			<string>23CD67D918356E2C00238761</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>23CD67F518356E2C00238761</key>
-		<dict>
-			<key>fileRef</key>
-			<string>23CD67DD18356E2C00238761</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>23CD67F618356E2C00238761</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>23CD67CE18356E2C00238761</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>23CD67D518356E2C00238761</string>
-			<key>remoteInfo</key>
-			<string>PeggyBoard</string>
-		</dict>
-		<key>23CD67F718356E2C00238761</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>23CD67D518356E2C00238761</string>
-			<key>targetProxy</key>
-			<string>23CD67F618356E2C00238761</string>
-		</dict>
-		<key>23CD67F818356E2C00238761</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>23CD67FE18356E2C00238761</string>
-				<string>23CD67F918356E2C00238761</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>PeggyBoardTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>23CD67F918356E2C00238761</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>23CD67FA18356E2C00238761</string>
-				<string>23CD67FB18356E2C00238761</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>23CD67FA18356E2C00238761</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>PeggyBoardTests-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>23CD67FB18356E2C00238761</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>23CD67FC18356E2C00238761</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>23CD67FC18356E2C00238761</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>23CD67FD18356E2C00238761</key>
-		<dict>
-			<key>fileRef</key>
-			<string>23CD67FB18356E2C00238761</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>23CD67FE18356E2C00238761</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PeggyBoardTests.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>23CD67FF18356E2C00238761</key>
-		<dict>
-			<key>fileRef</key>
-			<string>23CD67FE18356E2C00238761</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>23CD680018356E2C00238761</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>ARCHS</key>
-				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>ONLY_ACTIVE_ARCH</key>
-				<string>YES</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>23CD680118356E2C00238761</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>ARCHS</key>
-				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_MODULES</key>
-				<string>YES</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_BOOL_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN_ENUM_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_INT_CONVERSION</key>
-				<string>YES</string>
-				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
-				<string>YES_ERROR</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>ENABLE_NS_ASSERTIONS</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
-				<string>YES</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES_ERROR</string>
-				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_FUNCTION</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>7.0</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>23CD680218356E2C00238761</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>23CD680318356E2C00238761</string>
-				<string>23CD680418356E2C00238761</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>23CD680318356E2C00238761</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>524123A3965A4196A71B3387</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
-				<string>LaunchImage</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>PeggyBoard/PeggyBoard-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>PeggyBoard/PeggyBoard-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>23CD680418356E2C00238761</key>
-		<dict>
-			<key>baseConfigurationReference</key>
-			<string>524123A3965A4196A71B3387</string>
-			<key>buildSettings</key>
-			<dict>
-				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
-				<string>AppIcon</string>
-				<key>ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME</key>
-				<string>LaunchImage</string>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>PeggyBoard/PeggyBoard-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>PeggyBoard/PeggyBoard-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>23CD680518356E2C00238761</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>23CD680618356E2C00238761</string>
-				<string>23CD680718356E2C00238761</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>23CD680618356E2C00238761</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ARCHS</key>
-				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
-				<key>BUNDLE_LOADER</key>
-				<string>$(BUILT_PRODUCTS_DIR)/PeggyBoard.app/PeggyBoard</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(inherited)</string>
-					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>PeggyBoard/PeggyBoard-Prefix.pch</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>INFOPLIST_FILE</key>
-				<string>PeggyBoardTests/PeggyBoardTests-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUNDLE_LOADER)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>xctest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>23CD680718356E2C00238761</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ARCHS</key>
-				<string>$(ARCHS_STANDARD_INCLUDING_64_BIT)</string>
-				<key>BUNDLE_LOADER</key>
-				<string>$(BUILT_PRODUCTS_DIR)/PeggyBoard.app/PeggyBoard</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
-					<string>$(inherited)</string>
-					<string>$(DEVELOPER_FRAMEWORKS_DIR)</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>PeggyBoard/PeggyBoard-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>PeggyBoardTests/PeggyBoardTests-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUNDLE_LOADER)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>xctest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>524123A3965A4196A71B3387</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Pods.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B22926A7F5254AD0BAE82A88</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Copy Pods Resources</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Pods-resources.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>E20F92CDC2BF4A73BB5A6413</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
-if [[ $? != 0 ]] ; then
-    cat &lt;&lt; EOM
-error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
-EOM
-    exit 1
-fi
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>F73C91BFD85E4FF6ACDC7AA1</key>
-		<dict>
-			<key>fileRef</key>
-			<string>005E29F7EF354C17A190747E</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>23CD67CE18356E2C00238761</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		23BC642E18356F6F00CEB00D /* PEGBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BC642D18356F6F00CEB00D /* PEGBoardViewController.m */; };
+		23BC643118356F8B00CEB00D /* PEGBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BC643018356F8B00CEB00D /* PEGBoardView.m */; };
+		23BC643718356FB200CEB00D /* PEGBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BC643618356FB200CEB00D /* PEGBoard.m */; };
+		23BC643A1835749500CEB00D /* PEGClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BC64391835749500CEB00D /* PEGClient.m */; };
+		23CD67DA18356E2C00238761 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23CD67D918356E2C00238761 /* Foundation.framework */; };
+		23CD67DC18356E2C00238761 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23CD67DB18356E2C00238761 /* CoreGraphics.framework */; };
+		23CD67DE18356E2C00238761 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23CD67DD18356E2C00238761 /* UIKit.framework */; };
+		23CD67E418356E2C00238761 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23CD67E218356E2C00238761 /* InfoPlist.strings */; };
+		23CD67E618356E2C00238761 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CD67E518356E2C00238761 /* main.m */; };
+		23CD67EA18356E2C00238761 /* PEGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CD67E918356E2C00238761 /* PEGAppDelegate.m */; };
+		23CD67EC18356E2C00238761 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23CD67EB18356E2C00238761 /* Images.xcassets */; };
+		23CD67F318356E2C00238761 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23CD67F218356E2C00238761 /* XCTest.framework */; };
+		23CD67F418356E2C00238761 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23CD67D918356E2C00238761 /* Foundation.framework */; };
+		23CD67F518356E2C00238761 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23CD67DD18356E2C00238761 /* UIKit.framework */; };
+		23CD67FD18356E2C00238761 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 23CD67FB18356E2C00238761 /* InfoPlist.strings */; };
+		23CD67FF18356E2C00238761 /* PeggyBoardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 23CD67FE18356E2C00238761 /* PeggyBoardTests.m */; };
+		F73C91BFD85E4FF6ACDC7AA1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 005E29F7EF354C17A190747E /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		23CD67F618356E2C00238761 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 23CD67CE18356E2C00238761 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 23CD67D518356E2C00238761;
+			remoteInfo = PeggyBoard;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		005E29F7EF354C17A190747E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		23BC642C18356F6F00CEB00D /* PEGBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEGBoardViewController.h; sourceTree = "<group>"; };
+		23BC642D18356F6F00CEB00D /* PEGBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEGBoardViewController.m; sourceTree = "<group>"; };
+		23BC642F18356F8B00CEB00D /* PEGBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEGBoardView.h; sourceTree = "<group>"; };
+		23BC643018356F8B00CEB00D /* PEGBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEGBoardView.m; sourceTree = "<group>"; };
+		23BC643518356FB200CEB00D /* PEGBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEGBoard.h; sourceTree = "<group>"; };
+		23BC643618356FB200CEB00D /* PEGBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEGBoard.m; sourceTree = "<group>"; };
+		23BC64381835749500CEB00D /* PEGClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEGClient.h; sourceTree = "<group>"; };
+		23BC64391835749500CEB00D /* PEGClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEGClient.m; sourceTree = "<group>"; };
+		23CD67D618356E2C00238761 /* PeggyBoard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PeggyBoard.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		23CD67D918356E2C00238761 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		23CD67DB18356E2C00238761 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		23CD67DD18356E2C00238761 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		23CD67E118356E2C00238761 /* PeggyBoard-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PeggyBoard-Info.plist"; sourceTree = "<group>"; };
+		23CD67E318356E2C00238761 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		23CD67E518356E2C00238761 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		23CD67E718356E2C00238761 /* PeggyBoard-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PeggyBoard-Prefix.pch"; sourceTree = "<group>"; };
+		23CD67E818356E2C00238761 /* PEGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PEGAppDelegate.h; sourceTree = "<group>"; };
+		23CD67E918356E2C00238761 /* PEGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PEGAppDelegate.m; sourceTree = "<group>"; };
+		23CD67EB18356E2C00238761 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		23CD67F118356E2C00238761 /* PeggyBoardTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PeggyBoardTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		23CD67F218356E2C00238761 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		23CD67FA18356E2C00238761 /* PeggyBoardTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PeggyBoardTests-Info.plist"; sourceTree = "<group>"; };
+		23CD67FC18356E2C00238761 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		23CD67FE18356E2C00238761 /* PeggyBoardTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PeggyBoardTests.m; sourceTree = "<group>"; };
+		524123A3965A4196A71B3387 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		23CD67D318356E2C00238761 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23CD67DC18356E2C00238761 /* CoreGraphics.framework in Frameworks */,
+				23CD67DE18356E2C00238761 /* UIKit.framework in Frameworks */,
+				23CD67DA18356E2C00238761 /* Foundation.framework in Frameworks */,
+				F73C91BFD85E4FF6ACDC7AA1 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23CD67EE18356E2C00238761 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23CD67F318356E2C00238761 /* XCTest.framework in Frameworks */,
+				23CD67F518356E2C00238761 /* UIKit.framework in Frameworks */,
+				23CD67F418356E2C00238761 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		23CD67CD18356E2C00238761 = {
+			isa = PBXGroup;
+			children = (
+				23CD67DF18356E2C00238761 /* PeggyBoard */,
+				23CD67F818356E2C00238761 /* PeggyBoardTests */,
+				23CD67D818356E2C00238761 /* Frameworks */,
+				23CD67D718356E2C00238761 /* Products */,
+				524123A3965A4196A71B3387 /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		23CD67D718356E2C00238761 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				23CD67D618356E2C00238761 /* PeggyBoard.app */,
+				23CD67F118356E2C00238761 /* PeggyBoardTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		23CD67D818356E2C00238761 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				23CD67D918356E2C00238761 /* Foundation.framework */,
+				23CD67DB18356E2C00238761 /* CoreGraphics.framework */,
+				23CD67DD18356E2C00238761 /* UIKit.framework */,
+				23CD67F218356E2C00238761 /* XCTest.framework */,
+				005E29F7EF354C17A190747E /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		23CD67DF18356E2C00238761 /* PeggyBoard */ = {
+			isa = PBXGroup;
+			children = (
+				23CD67E818356E2C00238761 /* PEGAppDelegate.h */,
+				23CD67E918356E2C00238761 /* PEGAppDelegate.m */,
+				23CD67EB18356E2C00238761 /* Images.xcassets */,
+				23CD67E018356E2C00238761 /* Supporting Files */,
+				23BC642C18356F6F00CEB00D /* PEGBoardViewController.h */,
+				23BC642D18356F6F00CEB00D /* PEGBoardViewController.m */,
+				23BC642F18356F8B00CEB00D /* PEGBoardView.h */,
+				23BC643018356F8B00CEB00D /* PEGBoardView.m */,
+				23BC643518356FB200CEB00D /* PEGBoard.h */,
+				23BC643618356FB200CEB00D /* PEGBoard.m */,
+				23BC64381835749500CEB00D /* PEGClient.h */,
+				23BC64391835749500CEB00D /* PEGClient.m */,
+			);
+			path = PeggyBoard;
+			sourceTree = "<group>";
+		};
+		23CD67E018356E2C00238761 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				23CD67E118356E2C00238761 /* PeggyBoard-Info.plist */,
+				23CD67E218356E2C00238761 /* InfoPlist.strings */,
+				23CD67E518356E2C00238761 /* main.m */,
+				23CD67E718356E2C00238761 /* PeggyBoard-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		23CD67F818356E2C00238761 /* PeggyBoardTests */ = {
+			isa = PBXGroup;
+			children = (
+				23CD67FE18356E2C00238761 /* PeggyBoardTests.m */,
+				23CD67F918356E2C00238761 /* Supporting Files */,
+			);
+			path = PeggyBoardTests;
+			sourceTree = "<group>";
+		};
+		23CD67F918356E2C00238761 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				23CD67FA18356E2C00238761 /* PeggyBoardTests-Info.plist */,
+				23CD67FB18356E2C00238761 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		23CD67D518356E2C00238761 /* PeggyBoard */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23CD680218356E2C00238761 /* Build configuration list for PBXNativeTarget "PeggyBoard" */;
+			buildPhases = (
+				E20F92CDC2BF4A73BB5A6413 /* Check Pods Manifest.lock */,
+				23CD67D218356E2C00238761 /* Sources */,
+				23CD67D318356E2C00238761 /* Frameworks */,
+				23CD67D418356E2C00238761 /* Resources */,
+				B22926A7F5254AD0BAE82A88 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PeggyBoard;
+			productName = PeggyBoard;
+			productReference = 23CD67D618356E2C00238761 /* PeggyBoard.app */;
+			productType = "com.apple.product-type.application";
+		};
+		23CD67F018356E2C00238761 /* PeggyBoardTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23CD680518356E2C00238761 /* Build configuration list for PBXNativeTarget "PeggyBoardTests" */;
+			buildPhases = (
+				23CD67ED18356E2C00238761 /* Sources */,
+				23CD67EE18356E2C00238761 /* Frameworks */,
+				23CD67EF18356E2C00238761 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				23CD67F718356E2C00238761 /* PBXTargetDependency */,
+			);
+			name = PeggyBoardTests;
+			productName = PeggyBoardTests;
+			productReference = 23CD67F118356E2C00238761 /* PeggyBoardTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		23CD67CE18356E2C00238761 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = PEG;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Jacob Good";
+				TargetAttributes = {
+					23CD67F018356E2C00238761 = {
+						TestTargetID = 23CD67D518356E2C00238761;
+					};
+				};
+			};
+			buildConfigurationList = 23CD67D118356E2C00238761 /* Build configuration list for PBXProject "PeggyBoard" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 23CD67CD18356E2C00238761;
+			productRefGroup = 23CD67D718356E2C00238761 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				23CD67D518356E2C00238761 /* PeggyBoard */,
+				23CD67F018356E2C00238761 /* PeggyBoardTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		23CD67D418356E2C00238761 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23CD67E418356E2C00238761 /* InfoPlist.strings in Resources */,
+				23CD67EC18356E2C00238761 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23CD67EF18356E2C00238761 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23CD67FD18356E2C00238761 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B22926A7F5254AD0BAE82A88 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E20F92CDC2BF4A73BB5A6413 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		23CD67D218356E2C00238761 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23BC643118356F8B00CEB00D /* PEGBoardView.m in Sources */,
+				23BC643A1835749500CEB00D /* PEGClient.m in Sources */,
+				23CD67E618356E2C00238761 /* main.m in Sources */,
+				23BC642E18356F6F00CEB00D /* PEGBoardViewController.m in Sources */,
+				23CD67EA18356E2C00238761 /* PEGAppDelegate.m in Sources */,
+				23BC643718356FB200CEB00D /* PEGBoard.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23CD67ED18356E2C00238761 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23CD67FF18356E2C00238761 /* PeggyBoardTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		23CD67F718356E2C00238761 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 23CD67D518356E2C00238761 /* PeggyBoard */;
+			targetProxy = 23CD67F618356E2C00238761 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		23CD67E218356E2C00238761 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				23CD67E318356E2C00238761 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		23CD67FB18356E2C00238761 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				23CD67FC18356E2C00238761 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		23CD680018356E2C00238761 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		23CD680118356E2C00238761 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		23CD680318356E2C00238761 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 524123A3965A4196A71B3387 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PeggyBoard/PeggyBoard-Prefix.pch";
+				INFOPLIST_FILE = "PeggyBoard/PeggyBoard-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		23CD680418356E2C00238761 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 524123A3965A4196A71B3387 /* Pods.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PeggyBoard/PeggyBoard-Prefix.pch";
+				INFOPLIST_FILE = "PeggyBoard/PeggyBoard-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		23CD680618356E2C00238761 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PeggyBoard.app/PeggyBoard";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PeggyBoard/PeggyBoard-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "PeggyBoardTests/PeggyBoardTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		23CD680718356E2C00238761 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/PeggyBoard.app/PeggyBoard";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PeggyBoard/PeggyBoard-Prefix.pch";
+				INFOPLIST_FILE = "PeggyBoardTests/PeggyBoardTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		23CD67D118356E2C00238761 /* Build configuration list for PBXProject "PeggyBoard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23CD680018356E2C00238761 /* Debug */,
+				23CD680118356E2C00238761 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		23CD680218356E2C00238761 /* Build configuration list for PBXNativeTarget "PeggyBoard" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23CD680318356E2C00238761 /* Debug */,
+				23CD680418356E2C00238761 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		23CD680518356E2C00238761 /* Build configuration list for PBXNativeTarget "PeggyBoardTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23CD680618356E2C00238761 /* Debug */,
+				23CD680718356E2C00238761 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 23CD67CE18356E2C00238761 /* Project object */;
+}
