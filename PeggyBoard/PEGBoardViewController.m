@@ -8,6 +8,7 @@
 
 #import "PEGBoardViewController.h"
 #import "PEGBoardView.h"
+#import "PEGClient.h"
 
 @interface PEGBoardViewController ()
 
@@ -19,30 +20,47 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        
         PEGBoardView *view = [[PEGBoardView alloc] initWithFrame:CGRectMake(0,
                                                                             0,
                                                                             [[UIScreen mainScreen] applicationFrame].size.width,
                                                                             [[UIScreen mainScreen] applicationFrame].size.height)];
         self.view = view;
         self.board = [[PEGBoard alloc] init];
-        //[self.board lease];
+        [[PEGClient sharedClient] lease];
+        view.board = self.board;
+        [self clearBoard];
     }
     return self;
+}
+
+- (BOOL) shouldAutorotate {
+    return NO;
+}
+
+- (UIInterfaceOrientation) preferredInterfaceOrientationForPresentation {
+    return UIInterfaceOrientationLandscapeLeft;
+}
+
+- (NSUInteger) supportedInterfaceOrientations {
+    return UIInterfaceOrientationLandscapeLeft;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
 }
 
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
     if (motion == UIEventSubtypeMotionShake)
     {
-        [self.board clear];
+        [self clearBoard];
     }
+}
+
+- (void) clearBoard {
+    [self.board clear];
+    [[PEGClient sharedClient] clear];
 }
 
 -(BOOL)canBecomeFirstResponder {

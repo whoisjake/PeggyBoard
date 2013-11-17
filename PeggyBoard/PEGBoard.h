@@ -10,15 +10,13 @@
 
 @interface PEGBoard : NSObject
 
-@property (nonatomic,strong) NSString * leaseCode;
-@property (nonatomic,strong) NSDate * expiration;
++ (int) columnCount;
++ (int) rowCount;
 
-+ (int) columns;
-+ (int) rows;
+@property (nonatomic,strong) NSMutableArray * rows;
 
-- (BOOL) lease;
-- (BOOL) draw:(CGPoint)point character:(NSString*) character;
-- (BOOL) clear:(CGPoint) point;
-- (BOOL) clear;
+- (UIColor *) colorFor:(CGPoint)point;
+- (void) clear;
+- (void) draw:(CGPoint)point;
 
 @end

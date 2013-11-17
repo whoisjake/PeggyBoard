@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PEGBoard.h"
 
 @interface PEGBoardView : UIView
+
+@property (nonatomic,strong) PEGBoard * board;
 
 @end

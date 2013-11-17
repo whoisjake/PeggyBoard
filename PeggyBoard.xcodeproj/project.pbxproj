@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		237392BF1837DF6A00D6B693 /* mock_peggy.rb in Resources */ = {isa = PBXBuildFile; fileRef = 237392BE1837DF6A00D6B693 /* mock_peggy.rb */; };
 		23BC642E18356F6F00CEB00D /* PEGBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BC642D18356F6F00CEB00D /* PEGBoardViewController.m */; };
 		23BC643118356F8B00CEB00D /* PEGBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BC643018356F8B00CEB00D /* PEGBoardView.m */; };
 		23BC643718356FB200CEB00D /* PEGBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BC643618356FB200CEB00D /* PEGBoard.m */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		005E29F7EF354C17A190747E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		237392BE1837DF6A00D6B693 /* mock_peggy.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = mock_peggy.rb; sourceTree = "<group>"; };
 		23BC642C18356F6F00CEB00D /* PEGBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEGBoardViewController.h; sourceTree = "<group>"; };
 		23BC642D18356F6F00CEB00D /* PEGBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEGBoardViewController.m; sourceTree = "<group>"; };
 		23BC642F18356F8B00CEB00D /* PEGBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEGBoardView.h; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 		23CD67CD18356E2C00238761 = {
 			isa = PBXGroup;
 			children = (
+				237392BE1837DF6A00D6B693 /* mock_peggy.rb */,
 				23CD67DF18356E2C00238761 /* PeggyBoard */,
 				23CD67F818356E2C00238761 /* PeggyBoardTests */,
 				23CD67D818356E2C00238761 /* Frameworks */,
@@ -249,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23CD67E418356E2C00238761 /* InfoPlist.strings in Resources */,
+				237392BF1837DF6A00D6B693 /* mock_peggy.rb in Resources */,
 				23CD67EC18356E2C00238761 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,56 +11,41 @@
 
 @implementation PEGBoard
 
-+ (int) rows {
++ (int) rowCount {
     return 12;
 }
 
-+ (int) columns {
++ (int) columnCount {
     return 80;
 }
 
-- (BOOL) lease
+- (id)init
 {
-    [[PEGClient sharedClient] GET:@"get_lease/1" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-        _leaseCode = [responseObject objectForKey:@"lease_code"];
-        NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd' 'HH:mm:ss"];
-        NSString * date = [responseObject objectForKey:@"lease_expiry"];
-        _expiration = [dateFormatter dateFromString:date];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
-    
-    return YES;
+    self = [super init];
+    if (self) {
+        [self clear];
+    }
+    return self;
 }
 
-- (BOOL) draw:(CGPoint)point character:(NSString*) character {
-    NSString *uri = [NSString stringWithFormat:@"write/%@/%d/%d/%@", [self leaseCode], (int)point.x, (int)point.y, character];
-    
-    [[PEGClient sharedClient] GET:uri parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
-    
-    return YES;
+- (void) draw:(CGPoint) point {
+    self.rows[(int)point.x][(int)point.y] = @YES;
 }
 
-- (BOOL) clear:(CGPoint)point {
-    return [self draw:point character:@" "];
+- (void) clear {
+    self.rows = [[NSMutableArray alloc] initWithCapacity:[PEGBoard rowCount]];
+    for (int row = 0; row < [PEGBoard rowCount]; row++)
+    {
+        [self.rows addObject:[[NSMutableArray alloc] initWithCapacity:[PEGBoard columnCount]]];
+        for (int col = 0; col < [PEGBoard columnCount]; col++)
+        {
+            [self.rows[row] addObject:@NO];
+        }
+    }
 }
 
-- (BOOL) clear {
-    NSString *uri = [NSString stringWithFormat:@"clear/%@",[self leaseCode]];
-    
-    [[PEGClient sharedClient] GET:uri parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
-    return YES;
+- (UIColor *) colorFor:(CGPoint)point {
+    return ([self.rows[(int)point.x][(int)point.y]  isEqual: @YES]) ? [UIColor redColor] : [UIColor lightGrayColor];
 }
 
 @end

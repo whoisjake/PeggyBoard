@@ -19,6 +19,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     PEGBoardViewController * boardViewController = [[PEGBoardViewController alloc] initWithNibName:nil bundle:nil];
     self.window.rootViewController = boardViewController;
+    boardViewController.view.frame = [self.window convertRect:self.window.bounds fromWindow:self.window];
     [self.window makeKeyAndVisible];
     
     return YES;
