@@ -30,7 +30,8 @@ end
 
 get '/litebrite/peggy/write/:lease/:x/:y/:content' do |lease,x,y,content|
   r = BOARD[y.to_i]
-  r[x.to_i] = content
+  s = r[x.to_i,content.length]
+  r.gsub!(s,content)
   {:result => "success"}
 end
 

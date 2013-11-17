@@ -42,7 +42,7 @@
 }
 
 - (NSUInteger) supportedInterfaceOrientations {
-    return UIInterfaceOrientationLandscapeLeft;
+    return UIInterfaceOrientationLandscapeLeft | UIInterfaceOrientationLandscapeRight;
 }
 
 - (void)viewDidLoad
