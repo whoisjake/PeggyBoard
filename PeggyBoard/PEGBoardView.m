@@ -8,6 +8,7 @@
 
 #import "PEGBoardView.h"
 #import "PEGClient.h"
+#import <math.h>
 
 @implementation PEGBoardView {
     NSMutableArray * rects;
@@ -18,18 +19,24 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor whiteColor];
-        [self calculateRects:[self bounds]];
     }
     return self;
+}
+
+- (void) setFrame:(CGRect)frame {
+    [super setFrame:frame];
+    [self calculateRects:CGRectApplyAffineTransform(frame, [self transform])];
 }
 
 - (void) calculateRects:(CGRect)rect {
     int x_padding = 5;
     int y_padding = 25;
+    
     int x_gap = 1;
     int y_gap = 1;
-    int box_w = ((rect.size.height - (2 * x_padding) - (([PEGBoard columnCount] - 1) * x_gap)) / [PEGBoard columnCount]);
-    int box_h = ((rect.size.width - (2 * y_padding) - (([PEGBoard rowCount] - 1) * y_gap)) / [PEGBoard rowCount]);
+    
+    int box_w = ((rect.size.width - (2 * x_padding) - (([PEGBoard columnCount] - 1) * x_gap)) / [PEGBoard columnCount]);
+    int box_h = ((rect.size.height - (2 * y_padding) - (([PEGBoard rowCount] - 1) * y_gap)) / [PEGBoard rowCount]);
 
     rects = [[NSMutableArray alloc] initWithCapacity:[PEGBoard rowCount]];
     for (int row = 0; row < [PEGBoard rowCount]; row++)
@@ -39,8 +46,7 @@
         {
             int x = x_padding + (col * box_w) + (col * x_gap);
             int y = y_padding + (row * box_h) + (row * y_gap);
-            
-            CGRect box = (CGRect){{y,x},{box_h,box_w}};
+            CGRect box = (CGRect){{x,y},{box_w,box_h}};
             [rects[row] addObject:[NSValue valueWithCGRect:box]];
         }
     }

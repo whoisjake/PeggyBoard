@@ -24,7 +24,9 @@
                                                                             0,
                                                                             [[UIScreen mainScreen] applicationFrame].size.width,
                                                                             [[UIScreen mainScreen] applicationFrame].size.height)];
+        
         self.view = view;
+        self.view.transform = CGAffineTransformMakeRotation(M_PI + M_PI_2);
         self.board = [[PEGBoard alloc] init];
         [[PEGClient sharedClient] lease];
         view.board = self.board;
@@ -42,7 +44,7 @@
 }
 
 - (NSUInteger) supportedInterfaceOrientations {
-    return UIInterfaceOrientationLandscapeLeft | UIInterfaceOrientationLandscapeRight;
+    return UIInterfaceOrientationLandscapeLeft;
 }
 
 - (void)viewDidLoad
@@ -61,6 +63,7 @@
 - (void) clearBoard {
     [self.board clear];
     [[PEGClient sharedClient] clear];
+    [self.view setNeedsDisplay];
 }
 
 -(BOOL)canBecomeFirstResponder {
