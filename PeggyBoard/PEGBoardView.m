@@ -29,14 +29,17 @@
 }
 
 - (void) calculateRects:(CGRect)rect {
-    int x_padding = 5;
-    int y_padding = 25;
+    int x_padding = (int) (rect.size.width * 0.05); // 5% margin
+    int y_padding = (int) (rect.size.height * 0.20); // 25% margin
     
     int x_gap = 1;
     int y_gap = 1;
     
-    int box_w = ((rect.size.width - (2 * x_padding) - (([PEGBoard columnCount] - 1) * x_gap)) / [PEGBoard columnCount]);
-    int box_h = ((rect.size.height - (2 * y_padding) - (([PEGBoard rowCount] - 1) * y_gap)) / [PEGBoard rowCount]);
+    float box_w = ((rect.size.width - (2 * x_padding) - (([PEGBoard columnCount] - 1) * x_gap)) / [PEGBoard columnCount]);
+    float box_h = ((rect.size.height - (2 * y_padding) - (([PEGBoard rowCount] - 1) * y_gap)) / [PEGBoard rowCount]);
+    
+    x_padding += (int)(fmod(box_w,1) * [PEGBoard columnCount] / 2.0);
+    y_padding += (int)(fmod(box_h,1) * [PEGBoard rowCount] / 2.0);
 
     rects = [[NSMutableArray alloc] initWithCapacity:[PEGBoard rowCount]];
     for (int row = 0; row < [PEGBoard rowCount]; row++)
@@ -44,9 +47,9 @@
         [rects addObject:[[NSMutableArray alloc] initWithCapacity:[PEGBoard columnCount]]];
         for (int col = 0; col < [PEGBoard columnCount]; col++)
         {
-            int x = x_padding + (col * box_w) + (col * x_gap);
-            int y = y_padding + (row * box_h) + (row * y_gap);
-            CGRect box = (CGRect){{x,y},{box_w,box_h}};
+            int x = x_padding + (col * (int)box_w) + (col * x_gap);
+            int y = y_padding + (row * (int)box_h) + (row * y_gap);
+            CGRect box = (CGRect){{x,y},{(int)box_w,(int)box_h}};
             [rects[row] addObject:[NSValue valueWithCGRect:box]];
         }
     }
