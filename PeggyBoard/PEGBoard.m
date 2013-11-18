@@ -45,7 +45,7 @@
 }
 
 - (UIColor *) colorFor:(CGPoint)point {
-    return ([self.rows[(int)point.x][(int)point.y]  isEqual: @YES]) ? [UIColor redColor] : [UIColor lightGrayColor];
+    return ([self.rows[(int)point.x][(int)point.y]  isEqual: @YES]) ? [UIColor greenColor] : [UIColor grayColor];
 }
 
 @end
