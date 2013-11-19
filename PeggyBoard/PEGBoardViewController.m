@@ -49,11 +49,17 @@
     PEGBoardView * pegBoardView = (PEGBoardView *)self.view;
     pegBoardView.board = self.board;
     pegBoardView.transform = CGAffineTransformMakeRotation(M_PI + M_PI_2);
+    [self setBackgroundColor];
+    [self clearBoard];
+    [[PEGClient sharedClient] lease];
+}
+
+- (void) setBackgroundColor {
+    PEGBoardView * pegBoardView = (PEGBoardView *)self.view;
     UIColor * c = colorSelections[selectedColor];
     pegBoardView.backgroundColor = [c colorWithAlphaComponent:0.1];
     
-    [self clearBoard];
-    [[PEGClient sharedClient] lease];
+    [self.view setNeedsDisplay];
 }
 
 - (IBAction)rightSwipe:(UISwipeGestureRecognizer *)sender {
@@ -61,10 +67,7 @@
         if (selectedColor < ([colorSelections count] - 1)) {
             selectedColor += 1;
         }
-        PEGBoardView * pegBoardView = (PEGBoardView *)self.view;
-        UIColor * c = colorSelections[selectedColor];
-        pegBoardView.backgroundColor = [c colorWithAlphaComponent:0.1];
-        [self.view setNeedsDisplay];
+        [self setBackgroundColor];
     }
 }
 
@@ -73,10 +76,7 @@
         if (selectedColor > 0) {
             selectedColor -= 1;
         }
-        PEGBoardView * pegBoardView = (PEGBoardView *)self.view;
-        UIColor * c = colorSelections[selectedColor];
-        pegBoardView.backgroundColor = [c colorWithAlphaComponent:0.1];
-        [self.view setNeedsDisplay];
+        [self setBackgroundColor];
     }
 }
 

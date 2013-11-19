@@ -21,7 +21,7 @@ extern NSString * const PEGApiBaseUrl;
 
 - (void) draw:(PEGBoard *) board;
 - (void) lease;
-- (void) draw:(CGPoint)point character:(NSString*) character;
+- (void) draw:(CGPoint)point withString:(NSString*)string withColor:(UIColor*)color;
 - (void) clear:(CGPoint) point;
 - (void) clear;
 
