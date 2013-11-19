@@ -8,6 +8,7 @@
 
 #import "PEGAppDelegate.h"
 #import "PEGBoardViewController.h"
+#import "AFNetworking.h"
 
 @implementation PEGAppDelegate
 
@@ -16,12 +17,11 @@
     [[UIApplication sharedApplication] setApplicationSupportsShakeToEdit:YES];
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
     
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
-    PEGBoardViewController * boardViewController = [[PEGBoardViewController alloc] initWithNibName:nil bundle:nil];
-    self.window.rootViewController = boardViewController;
-    
-    [self.window makeKeyAndVisible];
+    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        if (status == AFNetworkReachabilityStatusNotReachable) {
+            [self tellUser:@"Unable to reach Peggy" withTitle:@"Please connect to the CoCo wifi and try again!"];
+        }
+    }];
     
     return YES;
 }
@@ -45,12 +45,21 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void) tellUser:(NSString*)message withTitle:(NSString *)title {
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:title
+                                                      message:message
+                                                     delegate:nil
+                                            cancelButtonTitle:@"OK"
+                                            otherButtonTitles:nil];
+    [alert show];
 }
 
 @end

@@ -8,19 +8,9 @@
 
 #import "PEGBoardView.h"
 #import "PEGClient.h"
-#import <math.h>
 
 @implementation PEGBoardView {
     NSMutableArray * rects;
-}
-
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        self.backgroundColor = [UIColor darkGrayColor];
-    }
-    return self;
 }
 
 - (void) setFrame:(CGRect)frame {
@@ -90,45 +80,6 @@
             CGContextFillPath(ctx);
         }
     }
-}
-
-- (void) pushBoard:(NSTimer *)timer {
-    [[PEGClient sharedClient] draw:self.board];
-}
-
-- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    UITouch * touch = [touches anyObject];
-    CGPoint touchPoint = [touch locationInView:self];
-    CGPoint point = [self rowAndColumnFromPoint:touchPoint];
-    if (point.x >= 0) {
-        [self.board draw:point];
-        [self setNeedsDisplay];
-    }
-}
-
-- (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    UITouch * touch = [touches anyObject];
-    CGPoint touchPoint = [touch locationInView:self];
-    CGPoint point = [self rowAndColumnFromPoint:touchPoint];
-    if (point.x >= 0) {
-        [self.board draw:point];
-        [self setNeedsDisplay];
-    }
-}
-
-- (void) touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    [NSTimer scheduledTimerWithTimeInterval:2.0
-                                     target:self
-                                   selector:@selector(pushBoard:)
-                                   userInfo:nil
-                                    repeats:NO];
-}
-
-- (void) touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
-{
 }
 
 @end

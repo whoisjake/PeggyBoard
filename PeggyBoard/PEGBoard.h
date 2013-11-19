@@ -13,10 +13,9 @@
 + (int) columnCount;
 + (int) rowCount;
 
-@property (nonatomic,strong) NSMutableArray * rows;
-
 - (UIColor *) colorFor:(CGPoint)point;
+- (BOOL) isEmpty:(CGPoint) point;
 - (void) clear;
-- (void) draw:(CGPoint)point;
+- (void) draw:(CGPoint)point withColor:(UIColor*)color;
 
 @end

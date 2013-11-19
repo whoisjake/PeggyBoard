@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		237392BF1837DF6A00D6B693 /* mock_peggy.rb in Resources */ = {isa = PBXBuildFile; fileRef = 237392BE1837DF6A00D6B693 /* mock_peggy.rb */; };
+		23B11914183BC6DC00518917 /* MainInterfaceIphone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23B11913183BC6DC00518917 /* MainInterfaceIphone.storyboard */; };
+		23B11916183BC6E900518917 /* MainInterfaceIpad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23B11915183BC6E900518917 /* MainInterfaceIpad.storyboard */; };
 		23BC642E18356F6F00CEB00D /* PEGBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BC642D18356F6F00CEB00D /* PEGBoardViewController.m */; };
 		23BC643118356F8B00CEB00D /* PEGBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BC643018356F8B00CEB00D /* PEGBoardView.m */; };
 		23BC643718356FB200CEB00D /* PEGBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 23BC643618356FB200CEB00D /* PEGBoard.m */; };
@@ -40,6 +42,8 @@
 /* Begin PBXFileReference section */
 		005E29F7EF354C17A190747E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		237392BE1837DF6A00D6B693 /* mock_peggy.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = mock_peggy.rb; sourceTree = "<group>"; };
+		23B11913183BC6DC00518917 /* MainInterfaceIphone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainInterfaceIphone.storyboard; sourceTree = "<group>"; };
+		23B11915183BC6E900518917 /* MainInterfaceIpad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainInterfaceIpad.storyboard; sourceTree = "<group>"; };
 		23BC642C18356F6F00CEB00D /* PEGBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEGBoardViewController.h; sourceTree = "<group>"; };
 		23BC642D18356F6F00CEB00D /* PEGBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PEGBoardViewController.m; sourceTree = "<group>"; };
 		23BC642F18356F8B00CEB00D /* PEGBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PEGBoardView.h; sourceTree = "<group>"; };
@@ -140,6 +144,8 @@
 				23BC643618356FB200CEB00D /* PEGBoard.m */,
 				23BC64381835749500CEB00D /* PEGClient.h */,
 				23BC64391835749500CEB00D /* PEGClient.m */,
+				23B11913183BC6DC00518917 /* MainInterfaceIphone.storyboard */,
+				23B11915183BC6E900518917 /* MainInterfaceIpad.storyboard */,
 			);
 			path = PeggyBoard;
 			sourceTree = "<group>";
@@ -253,7 +259,9 @@
 			files = (
 				23CD67E418356E2C00238761 /* InfoPlist.strings in Resources */,
 				237392BF1837DF6A00D6B693 /* mock_peggy.rb in Resources */,
+				23B11914183BC6DC00518917 /* MainInterfaceIphone.storyboard in Resources */,
 				23CD67EC18356E2C00238761 /* Images.xcassets in Resources */,
+				23B11916183BC6E900518917 /* MainInterfaceIpad.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

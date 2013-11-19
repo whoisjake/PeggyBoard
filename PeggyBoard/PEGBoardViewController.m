@@ -9,30 +9,25 @@
 #import "PEGBoardViewController.h"
 #import "PEGBoardView.h"
 #import "PEGClient.h"
+#import <math.h>
 
 @interface PEGBoardViewController ()
 
 @end
 
-@implementation PEGBoardViewController
+@implementation PEGBoardViewController {
+    int selectedColor;
+    NSArray * colorSelections;
+}
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        PEGBoardView *view = [[PEGBoardView alloc] initWithFrame:CGRectMake(0,
-                                                                            0,
-                                                                            [[UIScreen mainScreen] applicationFrame].size.width,
-                                                                            [[UIScreen mainScreen] applicationFrame].size.height)];
-        
-        self.view = view;
-        self.view.transform = CGAffineTransformMakeRotation(M_PI + M_PI_2);
-        self.board = [[PEGBoard alloc] init];
-        [[PEGClient sharedClient] lease];
-        view.board = self.board;
-        [self clearBoard];
-    }
-    return self;
+- (void) awakeFromNib {
+    self.board = [[PEGBoard alloc] init];
+    colorSelections = @[[UIColor greenColor],[UIColor redColor],[UIColor orangeColor]];
+    selectedColor = [colorSelections indexOfObject:[UIColor greenColor]];
+}
+
+- (void) dealloc {
+    
 }
 
 - (BOOL) shouldAutorotate {
@@ -50,6 +45,56 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    PEGBoardView * pegBoardView = (PEGBoardView *)self.view;
+    pegBoardView.board = self.board;
+    pegBoardView.transform = CGAffineTransformMakeRotation(M_PI + M_PI_2);
+    UIColor * c = colorSelections[selectedColor];
+    pegBoardView.backgroundColor = [c colorWithAlphaComponent:0.1];
+    
+    [self clearBoard];
+    [[PEGClient sharedClient] lease];
+}
+
+- (IBAction)rightSwipe:(UISwipeGestureRecognizer *)sender {
+    if ([sender state] == UIGestureRecognizerStateEnded) {
+        if (selectedColor < ([colorSelections count] - 1)) {
+            selectedColor += 1;
+        }
+        PEGBoardView * pegBoardView = (PEGBoardView *)self.view;
+        UIColor * c = colorSelections[selectedColor];
+        pegBoardView.backgroundColor = [c colorWithAlphaComponent:0.1];
+        [self.view setNeedsDisplay];
+    }
+}
+
+- (IBAction)leftSwipe:(UISwipeGestureRecognizer *)sender {
+    if ([sender state] == UIGestureRecognizerStateEnded) {
+        if (selectedColor > 0) {
+            selectedColor -= 1;
+        }
+        PEGBoardView * pegBoardView = (PEGBoardView *)self.view;
+        UIColor * c = colorSelections[selectedColor];
+        pegBoardView.backgroundColor = [c colorWithAlphaComponent:0.1];
+        [self.view setNeedsDisplay];
+    }
+}
+
+- (IBAction)panGestureRecognizer:(UIPanGestureRecognizer *)sender {
+    PEGBoardView * pegBoardView = (PEGBoardView *)self.view;
+    CGPoint p = [pegBoardView rowAndColumnFromPoint:[sender locationInView:self.view]];
+    if(p.x > 0) {
+        [self.board draw:p withColor:colorSelections[selectedColor]];
+        [self.view setNeedsDisplay];
+    }
+    
+    if ([sender state] == UIGestureRecognizerStateEnded) {
+        [NSTimer scheduledTimerWithTimeInterval:2.0
+                                         target:self
+                                       selector:@selector(pushBoard:)
+                                       userInfo:nil
+                                        repeats:NO];
+    }
 }
 
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
@@ -60,24 +105,14 @@
     }
 }
 
+- (void) pushBoard:(NSTimer *)timer {
+    [[PEGClient sharedClient] draw:self.board];
+}
+
 - (void) clearBoard {
     [self.board clear];
     [[PEGClient sharedClient] clear];
     [self.view setNeedsDisplay];
-}
-
--(BOOL)canBecomeFirstResponder {
-    return YES;
-}
-
--(void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    [self becomeFirstResponder];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [self resignFirstResponder];
-    [super viewWillDisappear:animated];
 }
 
 @end

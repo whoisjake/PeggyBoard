@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="cJp-2x-yb9">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+    </dependencies>
+    <scenes>
+        <!--Board View Controller-->
+        <scene sceneID="NVb-Gq-fpu">
+            <objects>
+                <viewController id="cJp-2x-yb9" customClass="PEGBoardViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y0K-fy-1Sp"/>
+                        <viewControllerLayoutGuide type="bottom" id="19C-54-8jt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xFC-t8-esj" customClass="PEGBoardView">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="7Gx-7f-s95" appends="YES" id="4cj-xG-bt4"/>
+                            <outletCollection property="gestureRecognizers" destination="F1n-0E-RMy" appends="YES" id="Tt5-LM-NqV"/>
+                            <outletCollection property="gestureRecognizers" destination="gq2-8v-zc5" appends="YES" id="CTv-4J-h7K"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="leftSwipeRecognizer" destination="F1n-0E-RMy" id="Wjh-z8-oDB"/>
+                        <outlet property="panRecognizer" destination="7Gx-7f-s95" id="jb2-oK-VdO"/>
+                        <outlet property="rightSwipeRecognizer" destination="gq2-8v-zc5" id="wfB-Rq-w4w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cL4-Kv-4cN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" numberOfTouchesRequired="2" id="gq2-8v-zc5" userLabel="Right Swipe Gesture Recognizer">
+                    <connections>
+                        <action selector="rightSwipe:" destination="cJp-2x-yb9" id="RxZ-cK-R7Z"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" numberOfTouchesRequired="2" id="F1n-0E-RMy" userLabel="Left Swipe Gesture Recognizer">
+                    <connections>
+                        <action selector="leftSwipe:" destination="cJp-2x-yb9" id="ULL-YM-6nG"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" maximumNumberOfTouches="1" id="7Gx-7f-s95">
+                    <connections>
+                        <action selector="panGestureRecognizer:" destination="cJp-2x-yb9" id="0Fr-i1-XRa"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="451" y="224"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

@@ -10,6 +10,8 @@
 #import "AFHTTPRequestOperationManager.h"
 #import "PEGBoard.h"
 
+extern NSString * const PEGApiBaseUrl;
+
 @interface PEGClient : AFHTTPRequestOperationManager
 
 + (instancetype)sharedClient;

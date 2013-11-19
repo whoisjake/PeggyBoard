@@ -13,4 +13,6 @@
 
 @property (nonatomic,strong) PEGBoard * board;
 
+- (CGPoint) rowAndColumnFromPoint:(CGPoint) point;
+
 @end

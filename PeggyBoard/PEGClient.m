@@ -8,7 +8,7 @@
 
 #import "PEGClient.h"
 
-static NSString * const PEGApiBaseUrl = @"http://localhost:4567/litebrite/peggy";
+NSString * const PEGApiBaseUrl = @"http://localhost:4567/litebrite/peggy";
 
 @implementation PEGClient
 
@@ -43,10 +43,10 @@ static NSString * const PEGApiBaseUrl = @"http://localhost:4567/litebrite/peggy"
         NSMutableString * line = [[NSMutableString alloc] init];
         for (int col = 0; col < [PEGBoard columnCount]; col++)
         {
-            if ([board.rows[row][col] isEqual:@YES]) {
-                [line appendString:@"#"];
-            } else {
+            if ([board isEmpty:(CGPoint){row,col}]) {
                 [line appendString:@" "];
+            } else {
+                [line appendString:@"#"];
             }
         }
         [self draw:(CGPoint){0,row} character:line];

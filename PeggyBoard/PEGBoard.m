@@ -9,7 +9,9 @@
 #import "PEGBoard.h"
 #import "PEGClient.h"
 
-@implementation PEGBoard
+@implementation PEGBoard {
+    NSMutableArray * rows;
+}
 
 + (int) rowCount {
     return 12;
@@ -28,24 +30,29 @@
     return self;
 }
 
-- (void) draw:(CGPoint) point {
-    self.rows[(int)point.x][(int)point.y] = @YES;
+- (BOOL) isEmpty:(CGPoint)point {
+    return [rows[(int)point.x][(int)point.y] count] == 0;
+}
+
+- (void) draw:(CGPoint) point withColor:(UIColor *) color {
+    rows[(int)point.x][(int)point.y] = @[color];
 }
 
 - (void) clear {
-    self.rows = [[NSMutableArray alloc] initWithCapacity:[PEGBoard rowCount]];
+    rows = [[NSMutableArray alloc] initWithCapacity:[PEGBoard rowCount]];
     for (int row = 0; row < [PEGBoard rowCount]; row++)
     {
-        [self.rows addObject:[[NSMutableArray alloc] initWithCapacity:[PEGBoard columnCount]]];
+        [rows addObject:[[NSMutableArray alloc] initWithCapacity:[PEGBoard columnCount]]];
         for (int col = 0; col < [PEGBoard columnCount]; col++)
         {
-            [self.rows[row] addObject:@NO];
+            [rows[row] addObject:@[]];
         }
     }
 }
 
 - (UIColor *) colorFor:(CGPoint)point {
-    return ([self.rows[(int)point.x][(int)point.y]  isEqual: @YES]) ? [UIColor greenColor] : [UIColor grayColor];
+    id p = rows[(int)point.x][(int)point.y];
+    return (p && ([p count] == 0)) ? [UIColor grayColor] : [p firstObject];
 }
 
 @end
