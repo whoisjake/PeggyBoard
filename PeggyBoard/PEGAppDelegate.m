@@ -8,6 +8,7 @@
 
 #import "PEGAppDelegate.h"
 #import "PEGBoardViewController.h"
+#import "PEGClient.h"
 #import "AFNetworking.h"
 
 @implementation PEGAppDelegate
@@ -19,7 +20,7 @@
     
     [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         if (status == AFNetworkReachabilityStatusNotReachable) {
-            [self tellUser:@"Unable to reach Peggy" withTitle:@"Please connect to the CoCo wifi and try again!"];
+            [self tellUser:@"Please connect to the CoCo wifi and try again!" withTitle:@"Unable to reach Peggy"];
         }
     }];
     
@@ -45,7 +46,12 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    
+    if (![[PEGClient sharedClient] hasValidLease]) {
+        [[PEGClient sharedClient] lease];
+        if (![[PEGClient sharedClient] hasValidLease]) {
+            [self tellUser:@"Please connect to the CoCo wifi and try again!" withTitle:@"Unable to reach Peggy"];
+        }
+    }
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

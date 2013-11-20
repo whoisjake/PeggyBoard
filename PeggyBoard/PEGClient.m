@@ -35,6 +35,17 @@ NSString * const PEGApiBaseUrl = @"http://localhost:4567/litebrite/peggy";
     return _colorMap;
 }
 
+- (BOOL) isExpired {
+    if (_expiration == nil) {
+        return YES;
+    }
+    return ([_expiration compare:[NSDate date]] == NSOrderedDescending);
+}
+
+- (BOOL) hasValidLease {
+    return (![self isExpired] && (_leaseCode != nil));
+}
+
 - (void) lease
 {
     [self GET:@"get_lease/1" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -47,6 +58,8 @@ NSString * const PEGApiBaseUrl = @"http://localhost:4567/litebrite/peggy";
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
+        _leaseCode = nil;
+        _expiration = nil;
     }];
 }
 

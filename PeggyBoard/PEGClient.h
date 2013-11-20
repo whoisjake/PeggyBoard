@@ -19,6 +19,8 @@ extern NSString * const PEGApiBaseUrl;
 @property (nonatomic,strong) NSString * leaseCode;
 @property (nonatomic,strong) NSDate * expiration;
 
+- (BOOL) hasValidLease;
+- (BOOL) isExpired;
 - (void) draw:(PEGBoard *) board;
 - (void) lease;
 - (void) draw:(CGPoint)point withString:(NSString*)string withColor:(UIColor*)color;

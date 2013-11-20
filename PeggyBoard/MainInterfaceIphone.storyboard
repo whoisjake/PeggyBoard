@@ -21,15 +21,22 @@
                             <outletCollection property="gestureRecognizers" destination="7Gx-7f-s95" appends="YES" id="4cj-xG-bt4"/>
                             <outletCollection property="gestureRecognizers" destination="F1n-0E-RMy" appends="YES" id="Tt5-LM-NqV"/>
                             <outletCollection property="gestureRecognizers" destination="gq2-8v-zc5" appends="YES" id="CTv-4J-h7K"/>
+                            <outletCollection property="gestureRecognizers" destination="fL2-zV-5wY" appends="YES" id="Su1-cN-OSs"/>
                         </connections>
                     </view>
                     <connections>
                         <outlet property="leftSwipeRecognizer" destination="F1n-0E-RMy" id="Wjh-z8-oDB"/>
                         <outlet property="panRecognizer" destination="7Gx-7f-s95" id="jb2-oK-VdO"/>
                         <outlet property="rightSwipeRecognizer" destination="gq2-8v-zc5" id="wfB-Rq-w4w"/>
+                        <outlet property="tapGestureRecognizer" destination="fL2-zV-5wY" id="wel-dm-Vm4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cL4-Kv-4cN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="fL2-zV-5wY">
+                    <connections>
+                        <action selector="touched:" destination="cJp-2x-yb9" id="Kqs-rp-5f0"/>
+                    </connections>
+                </tapGestureRecognizer>
                 <swipeGestureRecognizer direction="right" numberOfTouchesRequired="2" id="gq2-8v-zc5" userLabel="Right Swipe Gesture Recognizer">
                     <connections>
                         <action selector="rightSwipe:" destination="cJp-2x-yb9" id="RxZ-cK-R7Z"/>

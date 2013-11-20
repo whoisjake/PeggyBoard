@@ -51,7 +51,6 @@
     pegBoardView.transform = CGAffineTransformMakeRotation(M_PI + M_PI_2);
     [self setBackgroundColor];
     [self clearBoard];
-    [[PEGClient sharedClient] lease];
 }
 
 - (void) setBackgroundColor {
@@ -80,15 +79,23 @@
     }
 }
 
+- (IBAction)touched:(UITapGestureRecognizer *)sender {
+    [self handlePoint:[sender locationInView:self.view] withState:sender.state];
+}
+
 - (IBAction)panGestureRecognizer:(UIPanGestureRecognizer *)sender {
+    [self handlePoint:[sender locationInView:self.view] withState:sender.state];
+}
+
+- (void) handlePoint:(CGPoint)touchPoint withState:(UIGestureRecognizerState)gestureRecognizerState {
     PEGBoardView * pegBoardView = (PEGBoardView *)self.view;
-    CGPoint p = [pegBoardView rowAndColumnFromPoint:[sender locationInView:self.view]];
+    CGPoint p = [pegBoardView rowAndColumnFromPoint:touchPoint];
     if(p.x > 0) {
         [self.board draw:p withColor:colorSelections[selectedColor]];
         [self.view setNeedsDisplay];
     }
     
-    if ([sender state] == UIGestureRecognizerStateEnded) {
+    if (gestureRecognizerState == UIGestureRecognizerStateEnded) {
         [NSTimer scheduledTimerWithTimeInterval:2.0
                                          target:self
                                        selector:@selector(pushBoard:)

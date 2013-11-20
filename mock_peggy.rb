@@ -25,6 +25,7 @@ end
 get '/litebrite/peggy/get_lease/:length' do |length|
   LEASE[:code] = SecureRandom.hex
   LEASE[:expiry] = Time.now + length.to_i
+  content_type 'application/json'
   LEASE.merge({:result => "success"}).to_json
 end
 
@@ -32,11 +33,13 @@ get '/litebrite/peggy/write/:lease/:x/:y/:content' do |lease,x,y,content|
   r = BOARD[y.to_i]
   s = r[x.to_i,content.length]
   r.gsub!(s,content)
-  {:result => "success"}
+  content_type 'application/json'
+  {:result => "success"}.to_json
 end
 
 get '/litebrite/peggy/clear/:lease' do |lease|
   init_board
+  content_type 'application/json'
   {:result => "success"}.to_json
 end
 
