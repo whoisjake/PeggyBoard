@@ -113,7 +113,6 @@ NSString * const PEGApiBaseUrl = @"http://10.105.4.251/litebrite/peggy";
             }
         }
         [self draw:(CGPoint){x,y} withString:currentLine withColor:currentColor];
-        [NSThread sleepForTimeInterval:10];
     }
 }
 
