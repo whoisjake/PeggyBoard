@@ -23,6 +23,8 @@ extern NSString * const PEGApiBaseUrl;
 - (BOOL) isExpired;
 - (void) draw:(PEGBoard *) board;
 - (void) lease;
+- (void) lease:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success onFailure:(void (^)(AFHTTPRequestOperation *operation, id responseObject))failure;
+- (void) captureLeaseFromResponse:(id) responseObject;
 - (void) draw:(CGPoint)point withString:(NSString*)string withColor:(UIColor*)color;
 - (void) clear:(CGPoint) point;
 - (void) clear;

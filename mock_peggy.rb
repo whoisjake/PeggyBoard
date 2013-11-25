@@ -23,8 +23,8 @@ get '/' do
 end
 
 get '/litebrite/peggy/get_lease/:length' do |length|
-  LEASE[:code] = SecureRandom.hex
-  LEASE[:expiry] = Time.now + length.to_i
+  LEASE[:lease_code] = SecureRandom.hex
+  LEASE[:lease_expiry] = Time.now + length.to_i
   content_type 'application/json'
   LEASE.merge({:result => "success"}).to_json
 end

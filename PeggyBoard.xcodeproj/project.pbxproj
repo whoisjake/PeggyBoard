@@ -229,6 +229,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Jacob Good";
 				TargetAttributes = {
+					23CD67D518356E2C00238761 = {
+						DevelopmentTeam = PY95F3888U;
+					};
 					23CD67F018356E2C00238761 = {
 						TestTargetID = 23CD67D518356E2C00238761;
 					};
@@ -440,10 +443,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PeggyBoard/PeggyBoard-Prefix.pch";
 				INFOPLIST_FILE = "PeggyBoard/PeggyBoard-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -454,10 +460,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PeggyBoard/PeggyBoard-Prefix.pch";
 				INFOPLIST_FILE = "PeggyBoard/PeggyBoard-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

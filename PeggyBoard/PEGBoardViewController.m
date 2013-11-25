@@ -16,7 +16,7 @@
 @end
 
 @implementation PEGBoardViewController {
-    int selectedColor;
+    NSUInteger selectedColor;
     NSArray * colorSelections;
 }
 

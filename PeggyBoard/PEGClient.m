@@ -8,7 +8,8 @@
 
 #import "PEGClient.h"
 
-NSString * const PEGApiBaseUrl = @"http://localhost:4567/litebrite/peggy";
+//NSString * const PEGApiBaseUrl = @"http://localhost:4567/litebrite/peggy";
+NSString * const PEGApiBaseUrl = @"http://10.105.4.251/litebrite/peggy";
 
 @implementation PEGClient
 
@@ -46,21 +47,41 @@ NSString * const PEGApiBaseUrl = @"http://localhost:4567/litebrite/peggy";
     return (![self isExpired] && (_leaseCode != nil));
 }
 
+- (void) lease:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success onFailure:(void (^)(AFHTTPRequestOperation *operation, id responseObject))failure {
+    NSString *uri = @"get_lease/1";
+    NSLog(@"GET: %@", uri);
+    [self GET:uri parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self captureLeaseFromResponse:responseObject];
+        if (success) {
+            success(operation,responseObject);
+        }
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self clearLease];
+        if (failure) {
+            failure(operation,error);
+        }
+    }];
+}
+
 - (void) lease
 {
-    [self GET:@"get_lease/1" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-        _leaseCode = [responseObject objectForKey:@"lease_code"];
-        NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"yyyy-MM-dd' 'HH:mm:ss"];
-        NSString * date = [responseObject objectForKey:@"lease_expiry"];
-        _expiration = [dateFormatter dateFromString:date];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
-        _leaseCode = nil;
-        _expiration = nil;
-    }];
+    [self lease:nil onFailure:nil];
+}
+
+- (void) clearLease {
+    _leaseCode = nil;
+    _expiration = nil;
+}
+
+- (void) captureLeaseFromResponse:(id) responseObject {
+    NSLog(@"JSON: %@", responseObject);
+    _leaseCode = [responseObject objectForKey:@"lease_code"];
+    NSString * date = [responseObject objectForKey:@"lease_expiry"];
+    
+    NSError *error = nil;
+    NSDataDetector *detector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingTypeDate error:&error];
+    NSArray *matches = [detector matchesInString:date options:0 range:NSMakeRange(0, [date length])];
+    _expiration = ((NSTextCheckingResult *)[matches firstObject]).date;
 }
 
 - (void) draw:(PEGBoard *)board {
@@ -99,6 +120,7 @@ NSString * const PEGApiBaseUrl = @"http://localhost:4567/litebrite/peggy";
     
     NSString *colorUri = [NSString stringWithFormat:@"set_color/%@/%@",self.leaseCode,[self colorString:color]];
     colorUri = [colorUri stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSLog(@"GET: %@", colorUri);
     [self GET:colorUri parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -107,6 +129,7 @@ NSString * const PEGApiBaseUrl = @"http://localhost:4567/litebrite/peggy";
     
     NSString *writeUri = [NSString stringWithFormat:@"write/%@/%d/%d/%@", self.leaseCode, (int)point.x, (int)point.y, string];
     writeUri = [writeUri stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSLog(@"GET: %@", writeUri);
     [self GET:writeUri parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -121,7 +144,7 @@ NSString * const PEGApiBaseUrl = @"http://localhost:4567/litebrite/peggy";
 
 - (void) clear {
     NSString *uri = [NSString stringWithFormat:@"clear/%@",self.leaseCode];
-    
+    NSLog(@"GET: %@", uri);
     [self GET:uri parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
