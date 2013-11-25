@@ -18,6 +18,8 @@
     [[UIApplication sharedApplication] setApplicationSupportsShakeToEdit:YES];
     [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
     
+    [PEGClient sharedClient].operationQueue.maxConcurrentOperationCount = 1;
+    
     [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         if (status == AFNetworkReachabilityStatusNotReachable) {
             [self tellUser:@"Please connect to the CoCo wifi and try again!" withTitle:@"Unable to reach Peggy"];

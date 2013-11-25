@@ -103,7 +103,9 @@ NSString * const PEGApiBaseUrl = @"http://10.105.4.251/litebrite/peggy";
                 if ([currentColor isEqual:[board colorFor:pixel]]) {
                     [currentLine appendString:@"#"];
                 } else {
-                    [self draw:(CGPoint){x,y} withString:currentLine withColor:currentColor];
+                    if ([currentLine length] > 0) {
+                        [self draw:(CGPoint){x,y} withString:currentLine withColor:currentColor];
+                    }
                     currentColor = [board colorFor:pixel];
                     currentLine = [[NSMutableString alloc] init];
                     x = col;
