@@ -113,6 +113,7 @@ NSString * const PEGApiBaseUrl = @"http://10.105.4.251/litebrite/peggy";
             }
         }
         [self draw:(CGPoint){x,y} withString:currentLine withColor:currentColor];
+        [NSThread sleepForTimeInterval:10];
     }
 }
 
@@ -127,11 +128,15 @@ NSString * const PEGApiBaseUrl = @"http://10.105.4.251/litebrite/peggy";
         NSLog(@"Error: %@", error);
     }];
     
-    NSString *writeUri = [NSString stringWithFormat:@"write/%@/%d/%d/%@", self.leaseCode, (int)point.x, (int)point.y, string];
+    NSString *writeUri = [NSString stringWithFormat:@"write/%@/%d/%d/%@", self.leaseCode, (int)point.y, (int)point.x, string];
     writeUri = [writeUri stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSLog(@"GET: %@", writeUri);
+    
+    
+    
     [self GET:writeUri parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
+        NSLog(@"Success URL %@", operation.request.URL);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];

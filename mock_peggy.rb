@@ -29,7 +29,7 @@ get '/litebrite/peggy/get_lease/:length' do |length|
   LEASE.merge({:result => "success"}).to_json
 end
 
-get '/litebrite/peggy/write/:lease/:x/:y/:content' do |lease,x,y,content|
+get '/litebrite/peggy/write/:lease/:y/:x/:content' do |lease,y,x,content|
   r = BOARD[y.to_i]
   s = r[x.to_i,content.length]
   r.gsub!(s,content)
