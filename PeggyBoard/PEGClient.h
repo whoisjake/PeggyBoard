@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AFHTTPRequestOperationManager.h"
+#import "AFNetworking.h"
 #import "PEGBoard.h"
 
 extern NSString * const PEGApiBaseUrl;
 
-@interface PEGClient : AFHTTPRequestOperationManager
+@interface PEGClient : AFHTTPSessionManager
 
 + (instancetype)sharedClient;
 
@@ -23,7 +23,7 @@ extern NSString * const PEGApiBaseUrl;
 - (BOOL) isExpired;
 - (void) draw:(PEGBoard *) board;
 - (void) lease;
-- (void) lease:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success onFailure:(void (^)(AFHTTPRequestOperation *operation, id responseObject))failure;
+- (void) lease:(void (^)(NSURLSessionDataTask *task, id responseObject))success onFailure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
 - (void) captureLeaseFromResponse:(id) responseObject;
 - (void) draw:(CGPoint)point withString:(NSString*)string withColor:(UIColor*)color;
 - (void) clear:(CGPoint) point;

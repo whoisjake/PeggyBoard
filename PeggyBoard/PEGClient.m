@@ -47,18 +47,18 @@ NSString * const PEGApiBaseUrl = @"http://10.105.4.251/litebrite/peggy";
     return (![self isExpired] && (_leaseCode != nil));
 }
 
-- (void) lease:(void (^)(AFHTTPRequestOperation *operation, id responseObject))success onFailure:(void (^)(AFHTTPRequestOperation *operation, id responseObject))failure {
+- (void) lease:(void (^)(NSURLSessionDataTask *task, id responseObject))success onFailure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure {
     NSString *uri = @"get_lease/1";
     NSLog(@"GET: %@", uri);
-    [self GET:uri parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [self GET:uri parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         [self captureLeaseFromResponse:responseObject];
         if (success) {
-            success(operation,responseObject);
+            success(task,responseObject);
         }
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
         [self clearLease];
         if (failure) {
-            failure(operation,error);
+            failure(task,error);
         }
     }];
 }
@@ -121,9 +121,9 @@ NSString * const PEGApiBaseUrl = @"http://10.105.4.251/litebrite/peggy";
     NSString *colorUri = [NSString stringWithFormat:@"set_color/%@/%@",self.leaseCode,[self colorString:color]];
     colorUri = [colorUri stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSLog(@"GET: %@", colorUri);
-    [self GET:colorUri parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [self GET:colorUri parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
     
@@ -133,10 +133,9 @@ NSString * const PEGApiBaseUrl = @"http://10.105.4.251/litebrite/peggy";
     
     
     
-    [self GET:writeUri parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [self GET:writeUri parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
-        NSLog(@"Success URL %@", operation.request.URL);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
     
@@ -149,9 +148,9 @@ NSString * const PEGApiBaseUrl = @"http://10.105.4.251/litebrite/peggy";
 - (void) clear {
     NSString *uri = [NSString stringWithFormat:@"clear/%@",self.leaseCode];
     NSLog(@"GET: %@", uri);
-    [self GET:uri parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [self GET:uri parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
 }

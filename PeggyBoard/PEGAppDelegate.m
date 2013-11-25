@@ -47,7 +47,7 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     if (![[PEGClient sharedClient] hasValidLease]) {
-        [[PEGClient sharedClient] lease:nil onFailure:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [[PEGClient sharedClient] lease:nil onFailure:^(NSURLSessionDataTask *task, id responseObject) {
             [self tellUser:@"Please connect to the CoCo wifi and try again!" withTitle:@"Unable to reach Peggy"];
         }];
     }
