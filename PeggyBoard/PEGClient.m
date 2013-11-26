@@ -48,7 +48,7 @@ NSString * const PEGApiBaseUrl = @"http://10.105.4.251/litebrite/peggy";
 }
 
 - (void) lease:(void (^)(NSURLSessionDataTask *task, id responseObject))success onFailure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure {
-    NSString *uri = @"get_lease/1";
+    NSString *uri = @"get_lease/5";
     NSLog(@"GET: %@", uri);
     [self GET:uri parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         [self captureLeaseFromResponse:responseObject];
@@ -87,7 +87,7 @@ NSString * const PEGApiBaseUrl = @"http://10.105.4.251/litebrite/peggy";
 - (void) draw:(PEGBoard *)board {
     NSMutableString * currentLine;
     int x,y;
-    UIColor * currentColor = [UIColor greenColor];
+    UIColor * currentColor;
     for (int row = 0; row < [PEGBoard rowCount]; row++)
     {
         currentLine = [[NSMutableString alloc] init];
@@ -140,7 +140,6 @@ NSString * const PEGApiBaseUrl = @"http://10.105.4.251/litebrite/peggy";
     } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
-    
 }
 
 - (void) clear:(CGPoint)point {
