@@ -90,7 +90,7 @@
 - (void) handlePoint:(CGPoint)touchPoint withState:(UIGestureRecognizerState)gestureRecognizerState {
     PEGBoardView * pegBoardView = (PEGBoardView *)self.view;
     CGPoint p = [pegBoardView rowAndColumnFromPoint:touchPoint];
-    if(p.x > 0) {
+    if(p.x >= 0) {
         [self.board draw:p withColor:colorSelections[selectedColor]];
         [self.view setNeedsDisplay];
     }
