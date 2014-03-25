@@ -8,8 +8,8 @@
 
 #import "PEGClient.h"
 
-//NSString * const PEGApiBaseUrl = @"http://localhost:4567/litebrite/peggy";
-NSString * const PEGApiBaseUrl = @"http://10.105.4.251/litebrite/peggy";
+//NSString * const PEGApiBaseUrl = @"http://localhost:3000/peggy";
+NSString * const PEGApiBaseUrl = @"http://10.105.4.251/peggy";
 
 @implementation PEGClient
 
@@ -23,134 +23,75 @@ NSString * const PEGApiBaseUrl = @"http://10.105.4.251/litebrite/peggy";
     return _sharedClient;
 }
 
+- (id)initWithBaseURL:(NSURL *)url
+{
+    self = [super initWithBaseURL:url];
+    if (self)
+    {
+        [self setResponseSerializer:[AFHTTPResponseSerializer serializer]];
+        [[self responseSerializer] setAcceptableContentTypes:[NSSet setWithObject:@"text/plain"]];
+    }
+    
+    return self;
+}
+
 + (NSDictionary *) colorMap {
     static NSDictionary *_colorMap;
     static dispatch_once_t mapOnceToken;
     dispatch_once(&mapOnceToken, ^{
-        _colorMap = @{[UIColor redColor]: @"red",
-                      [UIColor greenColor]: @"green",
-                      [UIColor orangeColor]: @"orange",
-                      [UIColor blackColor]: @"black"};
+        _colorMap = @{[UIColor redColor]: @"{r}",
+                      [UIColor greenColor]: @"{g}",
+                      [UIColor orangeColor]: @"{o}",
+                      [UIColor blackColor]: @"{b}"};
     });
     
     return _colorMap;
 }
 
-- (BOOL) isExpired {
-    if (_expiration == nil) {
-        return YES;
-    }
-    return ([_expiration compare:[NSDate date]] == NSOrderedDescending);
-}
-
-- (BOOL) hasValidLease {
-    return (![self isExpired] && (_leaseCode != nil));
-}
-
-- (void) lease:(void (^)(NSURLSessionDataTask *task, id responseObject))success onFailure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure {
-    NSString *uri = @"get_lease/5";
-    NSLog(@"GET: %@", uri);
-    [self GET:uri parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        [self captureLeaseFromResponse:responseObject];
-        if (success) {
-            success(task,responseObject);
-        }
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        [self clearLease];
-        if (failure) {
-            failure(task,error);
-        }
-    }];
-}
-
-- (void) lease
-{
-    [self lease:nil onFailure:nil];
-}
-
-- (void) clearLease {
-    _leaseCode = nil;
-    _expiration = nil;
-}
-
-- (void) captureLeaseFromResponse:(id) responseObject {
-    NSLog(@"JSON: %@", responseObject);
-    _leaseCode = [responseObject objectForKey:@"lease_code"];
-    NSString * date = [responseObject objectForKey:@"lease_expiry"];
-    
-    NSError *error = nil;
-    NSDataDetector *detector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingTypeDate error:&error];
-    NSArray *matches = [detector matchesInString:date options:0 range:NSMakeRange(0, [date length])];
-    _expiration = ((NSTextCheckingResult *)[matches firstObject]).date;
-}
-
-- (void) draw:(PEGBoard *)board {
+- (void) draw:(int)boardId board:(PEGBoard *)board {
     NSMutableString * currentLine;
     int x,y;
-    UIColor * currentColor;
     for (int row = 0; row < [PEGBoard rowCount]; row++)
     {
         currentLine = [[NSMutableString alloc] init];
         x = 0;
         y = row;
-        currentColor = [UIColor greenColor];
         for (int col = 0; col < [PEGBoard columnCount]; col++)
         {
             CGPoint pixel = (CGPoint){row,col};
             if ([board isEmpty:pixel]) {
                 [currentLine appendString:@" "];
             } else {
-                if ([currentColor isEqual:[board colorFor:pixel]]) {
-                    [currentLine appendString:@"#"];
-                } else {
-                    if ([currentLine length] > 0) {
-                        [self draw:(CGPoint){x,y} withString:currentLine withColor:currentColor];
-                    }
-                    currentColor = [board colorFor:pixel];
-                    currentLine = [[NSMutableString alloc] init];
-                    x = col;
-                    [currentLine appendString:@"#"];
-                }
-                
+                [currentLine appendString:[self colorString:[board colorFor:pixel]]];
+                [currentLine appendString:@"#"];
             }
         }
-        [self draw:(CGPoint){x,y} withString:currentLine withColor:currentColor];
+        [self draw:boardId at:(CGPoint){x,y} withString:currentLine];
     }
 }
 
-- (void) draw:(CGPoint)point withString:(NSString*)string withColor:(UIColor*)color {
-    
-    NSString *colorUri = [NSString stringWithFormat:@"set_color/%@/%@",self.leaseCode,[self colorString:color]];
-    colorUri = [colorUri stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSLog(@"GET: %@", colorUri);
-    [self GET:colorUri parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
-    
-    NSString *writeUri = [NSString stringWithFormat:@"write/%@/%d/%d/%@", self.leaseCode, (int)point.y, (int)point.x, string];
+- (void) draw:(int)boardId at:(CGPoint)point withString:(NSString*)string {
+    NSLog(@"Writing: %@ to (%d,%d)", string,(int)point.x,(int)point.y);
+    NSString *writeUri = [NSString stringWithFormat:@"write?board=%d&y=%d&x=%d&text=%@", boardId, (int)point.y, (int)point.x, string];
     writeUri = [writeUri stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSLog(@"GET: %@", writeUri);
     
-    
-    
     [self GET:writeUri parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
+        NSLog(@"RESP: %@", responseObject);
     } failure:^(NSURLSessionDataTask *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
 }
 
-- (void) clear:(CGPoint)point {
-    [self draw:point withString:@" " withColor:[UIColor blackColor]];
+- (void) clear:(int) boardId at:(CGPoint)point {
+    [self draw:boardId at:point withString:@" "];
 }
 
-- (void) clear {
-    NSString *uri = [NSString stringWithFormat:@"clear/%@",self.leaseCode];
+- (void) clear:(int) boardId {
+    NSString *uri = [NSString stringWithFormat:@"clear?board=%d",boardId];
     NSLog(@"GET: %@", uri);
     [self GET:uri parameters:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
+        NSLog(@"RESP: %@", responseObject);
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
         NSLog(@"Error: %@", error);
     }];

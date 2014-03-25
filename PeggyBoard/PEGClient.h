@@ -19,14 +19,9 @@ extern NSString * const PEGApiBaseUrl;
 @property (nonatomic,strong) NSString * leaseCode;
 @property (nonatomic,strong) NSDate * expiration;
 
-- (BOOL) hasValidLease;
-- (BOOL) isExpired;
-- (void) draw:(PEGBoard *) board;
-- (void) lease;
-- (void) lease:(void (^)(NSURLSessionDataTask *task, id responseObject))success onFailure:(void (^)(NSURLSessionDataTask *task, NSError *error))failure;
-- (void) captureLeaseFromResponse:(id) responseObject;
-- (void) draw:(CGPoint)point withString:(NSString*)string withColor:(UIColor*)color;
-- (void) clear:(CGPoint) point;
-- (void) clear;
+- (void) draw:(int) boardId board:(PEGBoard *) board;
+- (void) draw:(int) boardId at:(CGPoint)point withString:(NSString*)string;
+- (void) clear:(int) boardId at:(CGPoint) point;
+- (void) clear:(int) boardId;
 
 @end
