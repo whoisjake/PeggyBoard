@@ -30,16 +30,8 @@
     
 }
 
-- (BOOL) shouldAutorotate {
-    return NO;
-}
-
-- (UIInterfaceOrientation) preferredInterfaceOrientationForPresentation {
-    return UIInterfaceOrientationLandscapeLeft;
-}
-
-- (NSUInteger) supportedInterfaceOrientations {
-    return UIInterfaceOrientationLandscapeLeft;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    return YES;
 }
 
 - (void)viewDidLoad
