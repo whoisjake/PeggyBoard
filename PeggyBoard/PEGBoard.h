@@ -17,5 +17,6 @@
 - (BOOL) isEmpty:(CGPoint) point;
 - (void) clear;
 - (void) draw:(CGPoint)point withColor:(UIColor*)color;
+- (PEGBoard *) copy;
 
 @end

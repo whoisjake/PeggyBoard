@@ -50,6 +50,24 @@
     }
 }
 
+- (PEGBoard *) copy {
+    PEGBoard * newBoard = [[PEGBoard alloc] init];
+    
+    for (int row = 0; row < [PEGBoard rowCount]; row++)
+    {
+        [rows addObject:[[NSMutableArray alloc] initWithCapacity:[PEGBoard columnCount]]];
+        for (int col = 0; col < [PEGBoard columnCount]; col++)
+        {
+            CGPoint pixel = (CGPoint) {row,col};
+            if (![self isEmpty:pixel]) {
+                [newBoard draw:pixel withColor:[self colorFor:pixel]];
+            }
+        }
+    }
+    
+    return newBoard;
+}
+
 - (UIColor *) colorFor:(CGPoint)point {
     id p = rows[(int)point.x][(int)point.y];
     return (p && ([p count] == 0)) ? [UIColor grayColor] : [p firstObject];

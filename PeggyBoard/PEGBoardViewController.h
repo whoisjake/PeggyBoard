@@ -11,7 +11,7 @@
 
 @interface PEGBoardViewController : UIViewController
 
-@property (nonatomic,strong) PEGBoard * board;
+@property (nonatomic, strong) PEGBoard * board;
 @property (nonatomic, strong) IBOutlet UIPanGestureRecognizer *panRecognizer;
 @property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *rightSwipeRecognizer;
 @property (strong, nonatomic) IBOutlet UISwipeGestureRecognizer *leftSwipeRecognizer;

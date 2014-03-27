@@ -48,7 +48,7 @@
 - (void) setBackgroundColor {
     PEGBoardView * pegBoardView = (PEGBoardView *)self.view;
     UIColor * c = colorSelections[selectedColor];
-    pegBoardView.backgroundColor = [c colorWithAlphaComponent:0.1];
+    pegBoardView.backgroundColor = [c colorWithAlphaComponent:0.3];
     
     [self.view setNeedsDisplay];
 }
@@ -105,8 +105,9 @@
 }
 
 - (void) pushBoard:(NSTimer *)timer {
+    PEGBoard * copiedBoard = [self.board copy];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [[PEGClient sharedClient] draw:0 board:self.board];
+        [[PEGClient sharedClient] draw:0 board:copiedBoard];
     });
 }
 
