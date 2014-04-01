@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="cJp-2x-yb9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="cJp-2x-yb9">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Board View Controller-->
@@ -37,12 +37,12 @@
                         <action selector="touched:" destination="cJp-2x-yb9" id="Kqs-rp-5f0"/>
                     </connections>
                 </tapGestureRecognizer>
-                <swipeGestureRecognizer direction="right" numberOfTouchesRequired="2" id="gq2-8v-zc5" userLabel="Right Swipe Gesture Recognizer">
+                <swipeGestureRecognizer cancelsTouchesInView="NO" delaysTouchesEnded="NO" direction="right" numberOfTouchesRequired="2" id="gq2-8v-zc5" userLabel="Right Swipe Gesture Recognizer">
                     <connections>
                         <action selector="rightSwipe:" destination="cJp-2x-yb9" id="RxZ-cK-R7Z"/>
                     </connections>
                 </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="left" numberOfTouchesRequired="2" id="F1n-0E-RMy" userLabel="Left Swipe Gesture Recognizer">
+                <swipeGestureRecognizer cancelsTouchesInView="NO" delaysTouchesEnded="NO" direction="left" numberOfTouchesRequired="2" id="F1n-0E-RMy" userLabel="Left Swipe Gesture Recognizer">
                     <connections>
                         <action selector="leftSwipe:" destination="cJp-2x-yb9" id="ULL-YM-6nG"/>
                     </connections>
