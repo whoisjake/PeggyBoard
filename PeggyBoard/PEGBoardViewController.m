@@ -113,9 +113,7 @@
 
 - (void) clearBoard {
     [self.board clear];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [[PEGClient sharedClient] clear:0];
-    });
+    [[PEGClient sharedClient] clear:0];
     [self.view setNeedsDisplay];
 }
 
