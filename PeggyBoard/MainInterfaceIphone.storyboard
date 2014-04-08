@@ -17,41 +17,9 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="7Gx-7f-s95" appends="YES" id="4cj-xG-bt4"/>
-                            <outletCollection property="gestureRecognizers" destination="F1n-0E-RMy" appends="YES" id="Tt5-LM-NqV"/>
-                            <outletCollection property="gestureRecognizers" destination="gq2-8v-zc5" appends="YES" id="CTv-4J-h7K"/>
-                            <outletCollection property="gestureRecognizers" destination="fL2-zV-5wY" appends="YES" id="Su1-cN-OSs"/>
-                        </connections>
                     </view>
-                    <connections>
-                        <outlet property="leftSwipeRecognizer" destination="F1n-0E-RMy" id="Wjh-z8-oDB"/>
-                        <outlet property="panRecognizer" destination="7Gx-7f-s95" id="jb2-oK-VdO"/>
-                        <outlet property="rightSwipeRecognizer" destination="gq2-8v-zc5" id="wfB-Rq-w4w"/>
-                        <outlet property="tapGestureRecognizer" destination="fL2-zV-5wY" id="wel-dm-Vm4"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cL4-Kv-4cN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="fL2-zV-5wY">
-                    <connections>
-                        <action selector="touched:" destination="cJp-2x-yb9" id="Kqs-rp-5f0"/>
-                    </connections>
-                </tapGestureRecognizer>
-                <swipeGestureRecognizer cancelsTouchesInView="NO" delaysTouchesEnded="NO" direction="right" numberOfTouchesRequired="2" id="gq2-8v-zc5" userLabel="Right Swipe Gesture Recognizer">
-                    <connections>
-                        <action selector="rightSwipe:" destination="cJp-2x-yb9" id="RxZ-cK-R7Z"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer cancelsTouchesInView="NO" delaysTouchesEnded="NO" direction="left" numberOfTouchesRequired="2" id="F1n-0E-RMy" userLabel="Left Swipe Gesture Recognizer">
-                    <connections>
-                        <action selector="leftSwipe:" destination="cJp-2x-yb9" id="ULL-YM-6nG"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <panGestureRecognizer minimumNumberOfTouches="1" maximumNumberOfTouches="1" id="7Gx-7f-s95">
-                    <connections>
-                        <action selector="panGestureRecognizer:" destination="cJp-2x-yb9" id="0Fr-i1-XRa"/>
-                    </connections>
-                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="451" y="224"/>
         </scene>

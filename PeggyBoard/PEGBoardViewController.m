@@ -37,13 +37,62 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    PEGBoardView * pegBoardView = (PEGBoardView *)self.view;
-    pegBoardView.board = self.board;
-    pegBoardView.transform = CGAffineTransformMakeRotation(M_PI + M_PI_2);
+    [self setupGestureRecognizers];
+    [self copyBoardToViewAndInvalidate];
+    [self setViewTransform:CGAffineTransformMakeRotation(M_PI + M_PI_2)];
     [self setBackgroundColor];
     [self clearBoard];
 }
+
+- (void) setupGestureRecognizers {
+    
+    self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(respondToTapGesture:)];
+    self.tapGestureRecognizer.numberOfTapsRequired = 1;
+    self.tapGestureRecognizer.numberOfTouchesRequired = 1;
+    [self.view addGestureRecognizer:self.tapGestureRecognizer];
+    
+    self.rightSwipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(respondToRightSwipeGesture:)];
+    self.rightSwipeRecognizer.numberOfTouchesRequired = 2;
+    self.rightSwipeRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.view addGestureRecognizer:self.rightSwipeRecognizer];
+    
+    self.leftSwipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(respondToLeftSwipeGesture:)];
+    self.leftSwipeRecognizer.numberOfTouchesRequired = 2;
+    self.leftSwipeRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+    [self.view addGestureRecognizer:self.leftSwipeRecognizer];
+    
+    self.panRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(respondToPanGesture:)];
+    self.panRecognizer.minimumNumberOfTouches = 1;
+    self.panRecognizer.maximumNumberOfTouches = 1;
+    [self.view addGestureRecognizer:self.panRecognizer];
+}
+
+- (void) respondToTapGesture:(UIGestureRecognizer *) gestureRecognizer {
+    [self handlePoint:[gestureRecognizer locationInView:self.view] withState:gestureRecognizer.state];
+}
+
+- (void) respondToRightSwipeGesture:(UIGestureRecognizer *) gestureRecognizer {
+    if ([gestureRecognizer state] == UIGestureRecognizerStateEnded) {
+        if (selectedColor < ([colorSelections count] - 1)) {
+            selectedColor += 1;
+        }
+        [self setBackgroundColor];
+    }
+}
+
+- (void) respondToLeftSwipeGesture:(UIGestureRecognizer *) gestureRecognizer {
+    if ([gestureRecognizer state] == UIGestureRecognizerStateEnded) {
+        if (selectedColor > 0) {
+            selectedColor -= 1;
+        }
+        [self setBackgroundColor];
+    }
+}
+
+- (void) respondToPanGesture:(UIGestureRecognizer *) gestureRecognizer {
+    [self handlePoint:[gestureRecognizer locationInView:self.view] withState:gestureRecognizer.state];
+}
+
 
 - (void) setBackgroundColor {
     PEGBoardView * pegBoardView = (PEGBoardView *)self.view;
@@ -53,38 +102,12 @@
     [self.view setNeedsDisplay];
 }
 
-- (IBAction)rightSwipe:(UISwipeGestureRecognizer *)sender {
-    if ([sender state] == UIGestureRecognizerStateEnded) {
-        if (selectedColor < ([colorSelections count] - 1)) {
-            selectedColor += 1;
-        }
-        [self setBackgroundColor];
-    }
-}
-
-- (IBAction)leftSwipe:(UISwipeGestureRecognizer *)sender {
-    if ([sender state] == UIGestureRecognizerStateEnded) {
-        if (selectedColor > 0) {
-            selectedColor -= 1;
-        }
-        [self setBackgroundColor];
-    }
-}
-
-- (IBAction)touched:(UITapGestureRecognizer *)sender {
-    [self handlePoint:[sender locationInView:self.view] withState:sender.state];
-}
-
-- (IBAction)panGestureRecognizer:(UIPanGestureRecognizer *)sender {
-    [self handlePoint:[sender locationInView:self.view] withState:sender.state];
-}
-
 - (void) handlePoint:(CGPoint)touchPoint withState:(UIGestureRecognizerState)gestureRecognizerState {
     PEGBoardView * pegBoardView = (PEGBoardView *)self.view;
     CGPoint p = [pegBoardView rowAndColumnFromPoint:touchPoint];
     if(p.x >= 0) {
         [self.board draw:p withColor:colorSelections[selectedColor]];
-        [self.view setNeedsDisplay];
+        [self copyBoardToViewAndInvalidate];
     }
     
     if (gestureRecognizerState == UIGestureRecognizerStateEnded) {
@@ -102,6 +125,17 @@
     {
         [self clearBoard];
     }
+}
+
+- (void) setViewTransform:(CGAffineTransform) transform {
+    PEGBoardView * pegBoardView = (PEGBoardView *)self.view;
+    pegBoardView.transform = transform;
+}
+
+- (void) copyBoardToViewAndInvalidate {
+    PEGBoardView * pegBoardView = (PEGBoardView *)self.view;
+    pegBoardView.board = [self.board copy];
+    [self.view setNeedsDisplay];
 }
 
 - (void) pushBoard:(NSTimer *)timer {
